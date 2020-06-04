@@ -65,7 +65,7 @@ class Graph:
         return iter(self.vertList.values())
 
 
-""" g=Graph()
+g=Graph()
 for i in range(6):
     g.addVertex(i)
 
@@ -73,4 +73,4 @@ for vertex in g:
     print (vertex)
     print (vertex.getConnections())
     print ('\n')
- """
+    
