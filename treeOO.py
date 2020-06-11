@@ -17,6 +17,7 @@ class BinaryTree(object):
         if self.rightChild == None:
             self.rightChild = BinaryTree(newNode)
         else:
+                 #this case will basically push down any existing tree one place
             t = BinaryTree(newNode)
             t.rightChild = self.rightChild
             self.rightChild = t
@@ -34,5 +35,25 @@ class BinaryTree(object):
         return self.key
 
 
-t=BinaryTree([3,4,5,6,8])
+t=BinaryTree([1])
+t.insertLeft(6)
+t.insertLeft(2)
+t.insertLeft().insertRight(7)
+
 print(t)
+print(t.getLeftChild().getLeftChild().getRootVal())
+print(t.getLeftChild().getRightChild().getRootVal())
+
+
+r = BinaryTree('a')
+print(t.getRootVal())
+print(r.getRootVal())
+print(r.getLeftChild())
+r.insertLeft('b')
+print(r.getLeftChild())
+print(r.getLeftChild().getRootVal())
+r.insertRight('c')
+print(r.getRightChild())
+print(r.getRightChild().getRootVal())
+r.getRightChild().setRootVal('hello')
+print(r.getRightChild().getRootVal())
