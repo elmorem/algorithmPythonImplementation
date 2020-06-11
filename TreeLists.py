@@ -28,3 +28,9 @@ def getLeftChild(root):
 
 def getRightChild(root):
     return root[2]
+
+tree = BinaryTree(5)
+left = BinaryTree(7)
+print(tree)
+insertLeft(tree, left)
+
