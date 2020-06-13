@@ -1,3 +1,5 @@
+#array must be already sorted.
+
 def binary_search(arr,ele):
     
     # First and last index values
