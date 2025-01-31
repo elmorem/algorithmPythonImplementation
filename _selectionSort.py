@@ -5,12 +5,13 @@
 # the largest item is in the correct place. After the second pass, the next largest 
 # is in place. This process continues and requires n−1 passes to sort n items, since 
 # the final item must be in place after the (n−1) st pass.
-
+# something 
 def selection_sort(arr):
     
     # For every slot in array
     for fillslot in range(len(arr)-1,0,-1):
-        positionOfMax=0
+        positionOfMax=0   
+
         
         # For every set of 0 to fillslot+1
         for location in range(1,fillslot+1):
