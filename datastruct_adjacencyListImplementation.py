@@ -1,4 +1,7 @@
-# Using dictionaries, it is easy to implement the adjacency list in Python. In our implementation of the Graph abstract data type we will create two classes: Graph, which holds the master list of vertices, and Vertex, which will represent each vertex in the graph.
+# Using dictionaries, it is easy to implement the adjacency list in Python. 
+# In our implementation of the Graph abstract data type we will create 
+# two classes: Graph, which holds the master list of vertices, 
+# and Vertex, which will represent each vertex in the graph.
 
 # Each Vertex uses a dictionary to keep track of the vertices to which it is connected, and the weight of each edge. This dictionary is called connectedTo. The constructor simply initializes the id, which will typically be a string, and the connectedTo dictionary. The addNeighbor method is used add a connection from this vertex to another. The getConnections method returns all of the vertices in the adjacency list, as represented by the connectedTo instance variable. The getWeight method returns the weight of the edge from this vertex to the vertex passed as a parameter.
 class Vertex:

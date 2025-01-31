@@ -1,0 +1,24 @@
+#Linked List Remove Duplicates from a linked list
+
+class LinkedList:
+    def __init__(self, value):
+        self.value = value
+        self.next = None
+
+
+def removeDuplicatesFromLinkedList(linkedList):
+	#so what this is actually going to take in is in fact the head of linked list
+	#which contains the value of the head and the pointer to the next node.
+	#when we reach a place where the next pointer points to a value which is None,
+	#we know we have reached the end.
+    currentNode = linkedList
+	while currentNode is not None:
+		nextDistinctNode = currentNode.next
+		while nextDistinctNode is not None and nextDistinctNode.value == currentNode.value:
+			nextDistinctNode = nextDistinctNode.next
+		#once we know that we've reached a node that is actually distinct
+		# we sent currentnode.next=nextdistinctnode
+		#and then we chance our current node --> currentnode=nextdistinct node
+		currentNode.next = nextDistinctNode
+		currentNode = nextDistinctNode
+	return linkedList

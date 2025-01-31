@@ -10,23 +10,62 @@
 # isEmpty() tests to see whether the stack is empty. It needs no parameters and returns a boolean value.
 # size() returns the number of items on the stack. It needs no parameters and returns an integer.
 
+from logging import raiseExceptions
+
+
 class Stack:
-    
     
     def __init__(self):
         self.items = []
+        self.min=[]
+        self.minVal=float("inf")
 
     def isEmpty(self):
         return self.items == []
 
     def push(self, item):
         self.items.append(item)
+        if len(self.min) == 0:
+            self.min.append(item)
+            self.minVal = self.min[-1]
 
-    def pop(self):
-        return self.items.pop()
-
-    def peek(self):
-        return self.items[len(self.items)-1]
+        elif item < self.min[-1]:
+            self.min.append(item)
+            self.minVal = self.min[-1]
 
     def size(self):
         return len(self.items)
+
+    def pop(self):
+        if self.size() == 0:
+            print("you messed up.")
+        else:
+            popped = self.items.pop()
+            if popped <= self.minVal:
+                self.min.pop()
+                self.minVal = self.min[-1]
+            return popped
+                      
+    def peek(self):
+        return self.items[len(self.items)-1]
+
+    def getMin(self):
+        return self.minVal 
+
+
+nums=Stack()
+nums.push(1)
+nums.push(-1)
+nums.push(3)
+nums.push(5)
+nums.push(-2)
+
+print(nums.peek())
+print(nums.getMin())
+nums.pop()
+print(nums.peek())
+print(nums.getMin())
+
+nums.pop()
+print(nums.peek())
+print(nums.getMin())

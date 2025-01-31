@@ -1,0 +1,33 @@
+
+BFS 
+WHY DOES THIS WORK FOR THE DENSE?
+1. initialize a queue. 
+1a. optional initialize a results array
+2. then initialize a while loop set to end when the length of the queue is 0
+3. initialize a variable called current which we get by popping off the first element in queue
+4. then append the name of current to the output array.
+5.  within the while loop initialize a for loop that iterates through the children of current (or neighbors depending on graph structure)
+6. iterating through them it them appends the children to the queue.
+7.  from there the while loop proceeds back to steps 3 and 4
+
+DFS
+WHY DOES THIS WORK FOR THE DENSE?
+1. create an array within  to append the results
+2. add the name of whatever node we are on
+3.initializes a for loop for each child within the children
+4. call DFS on each of those children
+5. return array to see DFS path
+
+binarySearch.
+1. sort the array.
+2. create a variable called middle 
+3. create another called potential match// initalize it to array[middle]
+4.  if it's equal to target return middle.
+5.  if the target is less than middle, run binary search on the first half of the array
+6. else run it on the right side.
+
+Traversals: for binary trees  while tree is not none:
+
+inorder:  recurse left, append root, recurse right
+preorder append root, recurse left, recurse right 
+
